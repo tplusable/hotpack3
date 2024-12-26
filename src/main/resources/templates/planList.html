@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>여행계획 목록</title>
+</head>
+<body>
+<div>
+    <h1>여행계획</h1>
+    <h4>여행계획을 짜보세요</h4>
+    <hr>
+</div>
+
+<div>
+    <button type="button" id="create-btn"
+            th:onclick="|location.href='@{/new-plan}'|">글 등록</button>
+    <hr>
+</div>
+
+<div>
+    <div th:each="item:${plans}">
+        <div>
+            <div th:text="${item.planId}"></div>
+            <div>
+                <h5 th:text="${item.planTitle}"></h5>
+                <p th:text="${item.planContent}"></p>
+                <a th:href="@{/plans/{id}(id=${item.planId})}"><button type="button">보러가기</button></a>
+            </div>
+        </div>
+        <br>
+        <hr>
+    </div>
+</div>
+</body>
+</html>

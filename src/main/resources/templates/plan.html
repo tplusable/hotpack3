@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>여행계획 글</title>
+</head>
+<body>
+<div>
+    <h1>여행계획</h1>
+    <h4>여행계획을 짜보세요</h4>
+</div>
+
+<div>
+    <div>
+        <div>
+            <plan>
+                <input type="hidden" id="plan_id" th:value="${plan.planId}">
+                <header>
+                    <h1 th:text="${plan.planTitle}"></h1>
+                    <div th:text="|작성일 ${#temporals.format(plan.regdate, 'yyyy-MM-dd HH:mm')}|"></div>
+                </header>
+                <section>
+                    <p th:text="${plan.planContent}"></p>
+                </section>
+                <button type="button" id="modify-btn" th:onclick="|location.href='@{/new-plan?id={planId}(planId=${plan.planId})}'|">수정</button>
+                <button type="button" id="delete-btn">삭제</button>
+            </plan>
+        </div>
+    </div>
+</div>
+
+<script src="/js/plan.js"></script>
+</body>
+</html>
