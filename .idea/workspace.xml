@@ -18,20 +18,27 @@
       <change afterPath="$PROJECT_DIR$/../hotpack/src/test/java/net/tplusable/hotpack/HotpackApplicationTests.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/table/hotpack3/controller/MainController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/table/hotpack3/controller/api/PlanApiController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/table/hotpack3/controller/api/TokenApiController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/table/hotpack3/controller/api/UserApiController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/table/hotpack3/controller/view/PlanViewController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/table/hotpack3/controller/view/UserViewController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/table/hotpack3/domain/Plan.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/table/hotpack3/domain/RefreshToken.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/table/hotpack3/dto/request/AddPlanRequest.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/table/hotpack3/dto/request/AddUserRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/table/hotpack3/dto/request/CreateAccessTokenRequest.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/table/hotpack3/dto/request/UpdatePlanRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/table/hotpack3/dto/response/CreateAccessTokenResponse.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/table/hotpack3/dto/response/PlanResponse.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/table/hotpack3/dto/view/PlanListViewResponse.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/table/hotpack3/dto/view/PlanViewResponse.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/table/hotpack3/repository/PlanRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/table/hotpack3/repository/RefreshTokenRepository.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/table/hotpack3/repository/UserRepository.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/table/hotpack3/service/PlanService.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/table/hotpack3/service/PlanServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/table/hotpack3/service/RefreshTokenService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/table/hotpack3/service/TokenService.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/table/hotpack3/service/UserDetailService.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/table/hotpack3/service/UserService.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/data.sql" afterDir="false" />
@@ -42,6 +49,7 @@
       <change afterPath="$PROJECT_DIR$/src/main/resources/templates/planList.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/templates/signup.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/test/java/com/table/hotpack3/controller/api/PlanApiControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/table/hotpack3/controller/api/TokenApiControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../blackstone-springboot/src/main/java/com/blackstone/Blackstone_springboot/domain/member/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/../blackstone-springboot/src/main/java/com/blackstone/Blackstone_springboot/domain/member/Board.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../blackstone-springboot/src/main/java/com/blackstone/Blackstone_springboot/domain/member/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../blackstone-springboot/src/main/java/com/blackstone/Blackstone_springboot/domain/member/Comment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../blackstone-springboot/src/main/java/com/blackstone/Blackstone_springboot/domain/member/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/../blackstone-springboot/src/main/java/com/blackstone/Blackstone_springboot/domain/member/Member.java" afterDir="false" />
@@ -107,10 +115,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit5 Test Class" />
+        <option value="HTML File" />
         <option value="Interface" />
         <option value="Class" />
-        <option value="HTML File" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -133,6 +141,9 @@
     "Gradle.PlanApiControllerTest.findAllPlans.executor": "Run",
     "Gradle.PlanApiControllerTest.findPlan.executor": "Run",
     "Gradle.PlanApiControllerTest.updatePlan.executor": "Run",
+    "Gradle.TokenApiControllerTest.executor": "Run",
+    "Gradle.TokenProviderTest.executor": "Run",
+    "Gradle.TokenProviderTest.generateToken.executor": "Run",
     "Gradle.hotpack3 [:Hotpack3Application.main()].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
@@ -164,78 +175,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PlanApiControllerTest.addPlan" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;com.table.hotpack3.controller.api.PlanApiControllerTest.addPlan&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="PlanApiControllerTest.deletePlan" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;com.table.hotpack3.controller.api.PlanApiControllerTest.deletePlan&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="PlanApiControllerTest.findPlan" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;com.table.hotpack3.controller.api.PlanApiControllerTest.findPlan&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
     <configuration name="PlanApiControllerTest.updatePlan" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -260,6 +199,78 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="TokenApiControllerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.table.hotpack3.controller.api.TokenApiControllerTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="TokenProviderTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.table.hotpack3.config.jwt.TokenProviderTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="TokenProviderTest.generateToken" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.table.hotpack3.config.jwt.TokenProviderTest.generateToken&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
         <option name="Make" enabled="true" />
@@ -273,11 +284,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.TokenApiControllerTest" />
+        <item itemvalue="Gradle.TokenProviderTest.generateToken" />
+        <item itemvalue="Gradle.TokenProviderTest" />
         <item itemvalue="Application.Hotpack3Application" />
         <item itemvalue="Gradle.PlanApiControllerTest.updatePlan" />
-        <item itemvalue="Gradle.PlanApiControllerTest.addPlan" />
-        <item itemvalue="Gradle.PlanApiControllerTest.deletePlan" />
-        <item itemvalue="Gradle.PlanApiControllerTest.findPlan" />
       </list>
     </recent_temporary>
   </component>
